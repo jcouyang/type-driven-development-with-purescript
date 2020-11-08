@@ -8,16 +8,18 @@
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "create-react-app": "^3.1.1",
-    "bower": "^1.8.8",
+    "create-react-app": "^4.0.0",
     "pulp": "^13.0.0",
-    "react-scripts": "3.1.1"
+    "purescript": "^0.13.8",
+    "react-scripts": "3.1.1",
+    "spago": "^0.17.0"
   },
   "scripts": {
     "purs-ide": "purs ide server",
     "purs-link": "ls -s ../output src/output",
-    "purs-build-w": "pulp -w build --source-maps  --skip-entry-point  --no-check-main",
-    "purs-build": "pulp build --source-maps  --skip-entry-point  --no-check-main",
+    "purs-build-w": "spago build --watch",
+    "purs-build": "spago build",
+    "prestart": "yarn purs-build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

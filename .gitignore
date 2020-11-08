@@ -96,3 +96,4 @@ typings/
 output/
 .psci_modules/
 src/output/
+.spago
