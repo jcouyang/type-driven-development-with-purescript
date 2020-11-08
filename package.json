@@ -17,7 +17,7 @@
   "scripts": {
     "purs-ide": "purs ide server",
     "purs-link": "ls -s ../output src/output",
-    "purs-build-w": "spago build --watch",
+    "purs-watch": "spago build --watch",
     "purs-build": "spago build",
     "prestart": "yarn purs-build",
     "start": "react-scripts start",

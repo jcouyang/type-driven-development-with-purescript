@@ -29,10 +29,10 @@ load path = do
       ajaxGetTodos :: Path -> Aff (Either Error (Array Todo))
       ajaxGetTodos = ajaxGet
 
-reloadPage :: State -> Aff State
-reloadPage _ = do
+reloadPage :: Aff (State -> State)
+reloadPage = do
   entities <- load("https://jsonplaceholder.typicode.com/todos")
-  pure {todos: entities}
+  pure $ const {todos: entities}
 
 class MonadAff m <= MonadEither m where
   liftEither :: Either Error ~> m
